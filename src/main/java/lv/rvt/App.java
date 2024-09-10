@@ -1,22 +1,29 @@
 package lv.rvt;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
+
+import java.util.Scanner;
 
 public class App 
 {
     public static void main( String[] args )
     {
-       //my code starts here 
-       String name = "edvards";
-       String surname = "megnis";
-       int age = 17;
-       boolean online = false;
+        Scanner scanner = new Scanner(System.in);
 
-       System.out.println(name);
-       System.out.println(surname);
-       System.out.println(age);
-       System.out.println(online);
+        System.out.print("name: ");
+        String name = scanner.nextLine();
+
+        System.out.print("last name: ");
+        String lastname = scanner.nextLine();
+
+        System.out.print("grupa: ");
+        String group = scanner.nextLine();
+
+        System.out.println();
+
+        System.out.println("your name is " + name + ", your last name is " + lastname + " and your group is " + group);
+
+
+        scanner.close();
 
 
     }

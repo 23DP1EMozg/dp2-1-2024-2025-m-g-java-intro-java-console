@@ -3,22 +3,28 @@ import java.util.Scanner;
 
 public class App
 {
-public static void main(String[] args) {
-   Scanner scanner = new Scanner(System.in);
+   public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
 
-   System.out.println("Give the first number: ");
-   int num1 = Integer.valueOf(scanner.nextLine());
-   System.out.println("Give the second number: ");
-   int num2 = Integer.valueOf(scanner.nextLine());
+      System.out.println("Value of the gift?");
+      int value = Integer.valueOf(scanner.nextLine());
+      double result = 0;
+      if(value < 5000){
+         System.out.println("no tax!");
+      }else if(value >= 5000 && value < 25000){
+         result = (100 + (value - 5000) * 0.08);
+      }else if(value >= 25000 && value < 55000){
+         result = (1700 + (value - 25000) * 0.1);
+      }else if(value >= 55000 && value < 200000){
+         result = (4700 + (value - 55000) * 0.12);
+      }else if(value >= 200000 && value < 1000000){
+         result = (22100 + (value - 200000) * 0.15);
+      }else if(value >= 1000000){
+         result = (142100 + (value - 1000000) * 0.17);
+      }
 
-   if(num1 > num2){
-    System.out.println("Greater number is: " + num1);
-   }else if(num2 > num1){
-    System.out.println("Greater number is: " + num2);
-   }else{
-    System.out.println("The numbers are equal!");
+      System.out.println("Tax: " + result);
+
+      scanner.close();
    }
-
-   scanner.close();
-}
 }

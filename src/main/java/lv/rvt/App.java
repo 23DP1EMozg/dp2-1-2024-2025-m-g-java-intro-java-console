@@ -6,24 +6,23 @@ public class App
    public static void main(String[] args) {
       Scanner scanner = new Scanner(System.in);
 
-      System.out.println("Value of the gift?");
-      int value = Integer.valueOf(scanner.nextLine());
-      double result = 0;
-      if(value < 5000){
-         System.out.println("no tax!");
-      }else if(value >= 5000 && value < 25000){
-         result = (100 + (value - 5000) * 0.08);
-      }else if(value >= 25000 && value < 55000){
-         result = (1700 + (value - 25000) * 0.1);
-      }else if(value >= 55000 && value < 200000){
-         result = (4700 + (value - 55000) * 0.12);
-      }else if(value >= 200000 && value < 1000000){
-         result = (22100 + (value - 200000) * 0.15);
-      }else if(value >= 1000000){
-         result = (142100 + (value - 1000000) * 0.17);
+      int count = 0;
+      int sum = 0;
+      
+      while(true){
+        System.out.println("Enter a number: ");
+        int number = Integer.valueOf(scanner.nextLine());
+
+        if(number == 0){
+            break;
+        }
+
+        sum += number;
+        count++;
       }
 
-      System.out.println("Tax: " + result);
+      System.out.println("Number of numbers: " + count);
+      System.out.println("Sum of the numbers: " + sum);
 
       scanner.close();
    }

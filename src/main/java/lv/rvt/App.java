@@ -27,6 +27,13 @@ public class App
       }
    }
 
+   public static void printRectangle(int height, int width){
+      for(int i = 0; i<height; i++){
+         printStars(width);
+      }
+      System.out.println();
+   }
+
 
    public static void printTriangle(int size){
       for(int i = 1; i<=size; i++){
@@ -40,10 +47,12 @@ public class App
          printSpaces(height - i);
          printStars(2 * i - 1);
       }
-      printSpaces(height - 2);
-      System.out.println("***");
-      printSpaces(height - 2);
-      System.out.println("***");
+
+
+      for(int i = 0; i<2; i++){
+         printSpaces(height - 2);
+         printStars(3);
+      }
 
    }
 }
